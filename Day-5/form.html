@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation Example</title>
+</head>
+<body>
+    <h2>User Login Form</h2>
+    
+    <form id="f1">
+        <!-- Username field -->
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <br><br>
+
+        <!-- User ID field -->
+        <label for="userid">User ID:</label>
+        <input type="text" id="userid" name="userid">
+        <br><br>
+
+        <!-- Password field -->
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <br><br>
+
+        <!-- Submit button -->
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Message area -->
+    <p id="msg"></p>
+
+    <script>
+        document.getElementById("f1").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+
+           
+            let username = document.getElementById("username").value.trim();
+            let userid = document.getElementById("userid").value.trim();
+            let password = document.getElementById("password").value.trim();
+            let msg = document.getElementById("msg");
+
+          
+            if (username === "" || userid === "" || password === "") {
+                msg.textContent = " All fields (Username, ID, Password) must be filled!";
+                msg.style.color = "red";
+            } else {
+                msg.textContent = " Form submitted successfully!";
+                msg.style.color = "green";
+           
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Example with JS</title>
+</head>
+<body> 
+    <h1 id="hid1">This is first heading</h1>
+    <h1 id="hid2">This is second heading</h1>
+
+    <!-- Button to change both headings -->
+    <button id="btnChangeHeadings">Change Both Headings</button>
+    <br><br>
+
+    <!-- Buttons to change background color -->
+    <button id="btnRed">Background Red</button>
+    <button id="btnBlue">Background Blue</button>
+    <button id="btnGreen">Background Green</button>
+
+    <script> 
+        // Get references to headings
+        let h1 = document.getElementById("hid1");
+        let h2 = document.getElementById("hid2");
+
+        // Button to change both headings
+        let btnChangeHeadings = document.getElementById("btnChangeHeadings");
+        btnChangeHeadings.addEventListener("click", function() {
+            h1.textContent = "Heading 1 changed!";
+            h2.textContent = "Heading 2 changed!";
+            h1.style.color = "blue";
+            h2.style.color = "green";
+        });
+
+        // Background color buttons
+        let btnRed = document.getElementById("btnRed");
+        let btnBlue = document.getElementById("btnBlue");
+        let btnGreen = document.getElementById("btnGreen");
+
+        btnRed.addEventListener("click", function() {
+            document.body.style.backgroundColor = "red";
+        });
+
+        btnBlue.addEventListener("click", function() {
+            document.body.style.backgroundColor = "blue";
+        });
+
+        btnGreen.addEventListener("click", function() {
+            document.body.style.backgroundColor = "green";
+        });
+    </script>
+</body>
+</html>
